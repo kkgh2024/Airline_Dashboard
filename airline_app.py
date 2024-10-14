@@ -14,7 +14,7 @@ app.config.suppress_callback_exceptions = True
 
 # Read the airline data into pandas dataframe
 #airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv',
-airline_data =  pd.read_csv( './Airline_Dashboard/airline_data.csv' , encoding = "ISO-8859-1",
+airline_data =  pd.read_csv( '/home/amanita/Airline_Dashboard/airline_data.csv' , encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str,
                                    'Div2Airport': str, 'Div2TailNum': str})
 
@@ -115,6 +115,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
         return [dcc.Graph(figure=carrier_fig), dcc.Graph(figure=weather_fig), dcc.Graph(figure=nas_fig), dcc.Graph(figure=sec_fig), dcc.Graph(figure=late_fig)]
 
 # This part is important for WSGI
-if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=8050)
+# This part is important for WSGI
+if __name__ == "__main__":
+    app.run_server(debug=True)
 
